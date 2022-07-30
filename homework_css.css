@@ -1,0 +1,158 @@
+
+.mytitle {
+    width: 100%;
+    height: 1000px;
+
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("https://img.vogue.co.kr/vogue/2020/12/style_5fe4015c070d9.jpg");
+
+    color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 100px;
+}
+
+@keyframes cursor {
+    from {
+        border-right: 2px solid #222;
+    }
+    to {
+        border-right: 2px solid #777;
+    }
+}
+
+.mysection {
+    width: 100%;
+    font-family: 'Hahmlet', serif;
+    padding: 30px 10px 30px 10px;
+}
+
+.mysection > .card > .card-header {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.container {
+    margin: 10px;
+}
+
+.container > div {
+    font-size: 17px;
+    padding: 10px 3px 3px 3px;
+    letter-spacing: -1px;
+}
+
+.myhistory {
+    width: 100%;
+    font-family: 'Hahmlet', serif;
+}
+
+.card > img {
+    width: 100%;
+    height: 480px;
+}
+
+.card-title {
+    font-weight: bold;
+    letter-spacing: -2px;
+    font-size: 25px;
+    padding: 2px 0 2px 0;
+}
+
+.card-text {
+    width: 100%;
+    font-family: 'Hahmlet', serif;
+    font-size: 15px;
+    letter-spacing: -1px;
+    line-height: 160%;
+}
+
+.mainkey{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    padding: 100px;
+}
+
+/*키워드 버튼 스타일*/
+.btn1 {
+    padding: 30px 0 30px 450px;
+}
+
+.btn2 {
+    padding: 10px 0 30px 550px;
+}
+
+.btn3 {
+    padding: 10px 0 100px 800px;
+}
+
+.btn_open {
+    font-family: 'Hahmlet', serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: lightcoral;
+}
+
+.btn_open:hover {
+    font-family: 'Hahmlet', serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: indianred;
+    text-decoration:none;
+}
+
+.pop_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    font-size: 0;
+    text-align: center;
+}
+
+.pop_wrap:after {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    content: '';
+}
+
+.pop_wrap .pop_inner {
+    font-family: 'Hahmlet', serif;
+    display: inline-block;
+    padding: 30px 30px;
+    background: #fff;
+    width: 50%;
+    vertical-align: middle;
+    font-size: 15px;
+    line-height: 180%;
+}
+
+.pop_inner > button{
+    background-color: lightcoral;
+    border-style: none;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    cursor:pointer;
+}
+
+.pop_inner > button:hover{
+    background-color:indianred;
+    border-style: none;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    cursor:pointer;
+}
+
