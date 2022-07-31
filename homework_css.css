@@ -1,8 +1,8 @@
 
+/*헤더*/
 .mytitle {
     width: 100%;
-    height: 1000px;
-
+    height: 1024px;
     background-size: cover;
     background-position: center;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("https://img.vogue.co.kr/vogue/2020/12/style_5fe4015c070d9.jpg");
@@ -54,10 +54,20 @@
     font-family: 'Hahmlet', serif;
 }
 
-.card > img {
+.card > figure > img{
+    background-color:mediumpurple;
     width: 100%;
-    height: 480px;
+    height: 100%;
+    max-width: 500px;
+    max-height: 400px;
+    object-fit: cover;
 }
+
+.card > .img3 {
+    max-width: 100%;
+    max-height: 480px;
+}
+
 
 .card-title {
     font-weight: bold;
@@ -72,43 +82,70 @@
     font-size: 15px;
     letter-spacing: -1px;
     line-height: 160%;
+    max-width: 500px;
 }
 
-.mainkey{
+/*인스타*/
+.myinstagram{
+    width: 100%;
+    margin: 80px 150px;
+    background-color: lightpink;
+}
+
+
+.mykeyword {
+    border: 1px solid black;
+    border-radius: 60px;
+    background-color: white;
+    margin: 50px auto 50px auto;
+    width: 100%;
+    max-width: 1020px;
+    padding: 0 0 100px 0;
+}
+
+.mainkeyword > p {
     font-family: 'Black Han Sans', sans-serif;
-    font-size: 60px;
+    font-size: 65px;
+    line-height: 120%;
     text-align: center;
-    padding: 100px;
+    margin: 0 auto;
+    padding: 90px;
 }
 
 /*키워드 버튼 스타일*/
+.keysection{
+    width: 100%;
+    height: 100%;
+}
+
 .btn1 {
-    padding: 30px 0 30px 450px;
+    width: 100%;
+    margin: auto 0 auto 400px;
 }
 
 .btn2 {
-    padding: 10px 0 30px 550px;
+    margin: auto 0 auto 500px;
 }
 
 .btn3 {
-    padding: 10px 0 100px 800px;
+    margin: auto 0 auto 450px;
 }
 
+
 .btn_open {
-    font-family: 'Hahmlet', serif;
-    font-weight: bold;
+    font-family: 'Black Han Sans', sans-serif;
     font-size: 30px;
     color: lightcoral;
 }
 
 .btn_open:hover {
-    font-family: 'Hahmlet', serif;
-    font-weight: bold;
-    font-size: 40px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 35px;
     color: indianred;
-    text-decoration:none;
+    text-decoration: none;
 }
 
+/*팝업 시작*/
 .pop_wrap {
     position: fixed;
     top: 0;
@@ -138,21 +175,21 @@
     line-height: 180%;
 }
 
-.pop_inner > button{
+.pop_inner > button {
     background-color: lightcoral;
     border-style: none;
     color: white;
     padding: 10px;
     border-radius: 15px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.pop_inner > button:hover{
-    background-color:indianred;
+.pop_inner > button:hover {
+    background-color: indianred;
     border-style: none;
     color: white;
     padding: 10px;
     border-radius: 15px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
