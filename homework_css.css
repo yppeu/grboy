@@ -1,3 +1,9 @@
+body {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 
 /*헤더*/
 .mytitle {
@@ -54,8 +60,8 @@
     font-family: 'Hahmlet', serif;
 }
 
-.card > figure > img{
-    background-color:mediumpurple;
+.card > figure > img {
+    background-color: mediumpurple;
     width: 100%;
     height: 100%;
     max-width: 500px;
@@ -85,13 +91,28 @@
     max-width: 500px;
 }
 
-/*인스타*/
-.myinstagram{
+/*인스타 시작*/
+
+.mypagebtn {
     width: 100%;
-    margin: 80px 150px;
-    background-color: lightpink;
 }
 
+.pagination > li > a{
+    padding-top: 300px;
+    margin-left: 210px;
+}
+
+
+.myinstagram {
+    display: flex;
+    max-width: 1024px;
+    margin: 80px 200px;
+}
+
+.instaimg1, .instaimg2 {
+    padding: 20px 20px;
+    margin: 0 auto;
+}
 
 .mykeyword {
     border: 1px solid black;
@@ -113,7 +134,7 @@
 }
 
 /*키워드 버튼 스타일*/
-.keysection{
+.keysection {
     width: 100%;
     height: 100%;
 }
