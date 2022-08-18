@@ -2,267 +2,160 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
     <!--Black+Han+Sans 폰트-->
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Batang&family=Hahmlet&display=swap"
           rel="stylesheet">
 
-    <!--외부스타일-->
-    <link rel="stylesheet" href="homework_css.css">
+    <title>기리보이 팬명록</title>
+    <style>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+        * {
+            font-family: 'Hahmlet', serif;
+        }
 
-    <title>기리보이-나무위키</title>
+        /*팬명록 text*/
+        .mytitle > h1 {
+            font-size: 70px;
+            text-align: center
+            background-color: lightpink;
+        }
+
+        /*서울시 온도 API*/
+        #temp {
+            font-size: 20px;
+        }
+
+        /*헤더영역*/
+        .mytitle {
+            width: 100%;
+            height: 768px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://scontent-ssn1-1.xx.fbcdn.net/v/t1.6435-9/93653847_2998553740211630_2308237436301344768_n.jpg?stp=cp0_dst-jpg_e15_p403x403_q65&_nc_cat=111&ccb=1-7&_nc_sid=8024bb&_nc_ohc=DlQ7yHxXoFIAX8O9XdK&_nc_ht=scontent-ssn1-1.xx&oh=00_AT-ZoUhFMw-JL_A_L0DBGVjLceuiSMhfJSZbNjYrhNyo6Q&oe=6321EC6B');
+            background-position: center;
+            background-size: cover;
+            color: whitesmoke;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mycheerallbtn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        /*응원남기기 버튼*/
+        .mycheerallbtn > button {
+            width: 13%;
+            font-size: 17px;
+            padding: 20px;
+            margin: 30px 10px;
+            border-radius: 50px;
+        }
+
+        /*카드 섹션*/
+        .mysection {
+            border: 1px solid darkgray;
+            width: 35%;
+            margin: 50px auto;
+            padding: 1%;
+            display: none;
+        }
+
+
+        .blockquote > p {
+            font-size: 16px;
+        }
+
+        .blockquote > :last-child {
+            font-size: 15px;
+        }
+
+    </style>
+
+    <script>
+
+
+        $.ajax({
+            type: "GET",
+            url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+            data: {},
+            success: function (response) {
+                let temps = response['temp']
+                let cloud = response['clouds']
+
+                $('#temp').append('현재 서울시 기온 : ' + temps + '˚' + `<br>` + '강수 확률 : ' + cloud);
+                $('#temp').addClass('text-center');
+            }
+        })
+
+        function chrbtn() {
+            $('#mycard').show();
+        }
+
+        function closebtn() {
+            $('#mycard').hide();
+        }
+
+
+    </script>
 </head>
 
 <body>
+
 <!--헤더 시작-->
 <div class="mytitle">
-    <div>
-        <p class="mytext"></p>
-    </div>
+    <h1>기리보이<br/>팬명록💗</h1>
+    <p id="temp"></p>
 </div>
 <!--헤더 끝-->
 
-<!--상세정보 시작-->
-<div class="mysection">
-    <div class="card">
-        <div class="card-header">
-            분류 : 기리보이
-        </div>
-        <!--카드 안 정보 시작-->
-        <div class="container">
-            <div class="row justify-content-start">
-                <div class="col-3">
-                    본명 :
-                </div>
-                <div class="col-9">
-                    홍시영 (洪時英, Hong Si-young)
-                </div>
-            </div>
-            <div class="row justify-content-start">
-                <div class="col-3">
-                    출생 :
-                </div>
-                <div class="col-9">
-                    1991년 1월 24일 (31세)
-                </div>
-            </div>
-            <div class="row justify-content-start">
-                <div class="col-3">
-                    직업 :
-                </div>
-                <div class="col-9">
-                    래퍼, 프로듀서, 배우
-                </div>
-            </div>
-            <div class="row justify-content-start">
-                <div class="col-3">
-                    소속 :
-                </div>
-                <div class="col-9">
-                    린치핀 Just Music (부사장)
-                    WEDAPLUGG RECORD... WEDAPLUGG RECORDS (대표)
-                    14Pw I4P (대표)
-                </div>
-            </div>
-            <div class="row justify-content-start">
-                <div class="col-3">
-                    MBTI :
-                </div>
-                <div class="col-9">
-                    INTP
-                </div>
-            </div>
-        </div>
-        <!--카드 안 정보 끝-->
+<!--응원남기기 시작-->
+<!--응원남기기 버튼 시작-->
+<div class="mycheer">
+    <div class="mycheerallbtn">
+        <button onclick="chrbtn()" type="button" class="btn btn-outline-danger">응원남기기</button>
+        <button onclick="closebtn()" type="button" class="btn btn-outline-danger">닫기</button>
     </div>
-</div>
-<!--상세정보 끝-->
+    <!--응원남기기 버튼 끝-->
+    <div id="mycard" class="mysection">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"></label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="닉네임">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="응원댓글" rows="3"></textarea>
+        </div>
 
-<!--히스토리 시작-->
-<div class="myhistory">
-    <div class="card-group">
-        <div class="card">
-            <figure>
-                <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/93797099_2998553606878310_6237286150180962304_n.jpg?stp=cp0_dst-jpg_e15_p480x480_q65&_nc_cat=104&ccb=1-7&_nc_sid=8024bb&_nc_ohc=QDKbMm7ivEgAX-eNDMg&_nc_ht=scontent-gmp1-1.xx&oh=00_AT-bpAQnErJyphSBWzfJnZoai8BWbFjJ-SFwrBEjrQE1Vg&oe=6308F60A"
-                     class="img1" alt="생애사진">
-            </figure>
+        <button type="button" class="btn btn-danger">확인</button>
+
+        <!--댓글 시작-->
+        <div class="myfooter">
             <div class="card-body">
-                <h5 class="card-title">생애</h5>
-                <p class="card-text">아주 어린 시절부터 음악을 좋아했다. 중학생 시절에는 종종 학교 친구들 앞에서 노래를 부르거나
-                    춤 실력을 보여주기도 했다. 고1 정도부터 인터넷 사이트에서 랩하는 걸 보고 ‘나도 해보자’ 하는 생각에 그때부터 랩을 먼저 시작했다고 한다.
-                    인스트루멘탈(instrumental)로 번개송을 만들면서 시작했다가 작곡까지 본인이 해보고 싶다는 생각이 들어서, 아는 형한테 프로그램을 받아서
-                    고1 때부터 노래를 만든 것이 음악 활동의 시작이다.[12] 그 후 실용음악학원을 다니며 작곡을 배웠다.[13]
-                    래퍼로 전향한 이유는 본인이 노래를 못 부른다고 생각해서. 처음 저스트뮤직에 들어왔을 때도 스윙스가 기리보이가 노래를 너무 못 부른다고
-                    보컬 트레이닝까지 붙여줬다고 한다. 근데 보컬 선생님이[14] "넌 노래 못 부르는게 매력이야"라며 레슨을 끝냈다고 한다.[15]
-                    그래도 어렸을 적부터 음악 장르에 대한 큰 편견이나 부심이 없었던 터라[16] 여러 장르의
-                    음악을 폭넓게 듣고 노래를 만들었다고 한다. 그 영향이 계속 되어서 지금도 기리보이의 예전 음악들을 들으면 힙합보단 '팝' 같이 들린다.[17]
-                    그렇게 음악을 만들다가 어글리 덕의 귀에 들어가게 되고, 어글리 덕이 기리보이를 스윙스에게 추천하면서 저스트 뮤직에 들어가게 된다.
-                    기리보이는 당시 친분이 있던 릴보이가 자신이 있는 그랜드라인[18]으로 오라고 꼬시고 있던 중이었는데, 중간에 스윙스의 제의를 받고 저스트 뮤직로
-                    가게 된 것. 그랜드라인은 본인을 신경써줄 만한 여력이 없다고 판단하여 이름의 뜻이 맘에 들었던 저스트 뮤직을 선택했다고 한다.
-                    또한 자신이 팬이었던 스윙스가 직접 영입 제안을 했다는 사실도 크게 작용한 것으로 보인다[19]. 이 때 발표한 곡이 첫 싱글
-                    《You Look So Good To Me》다.[20] 이후 같은 크루에 있는 긱스의 릴보이와 콜라보한 《한잔해요》, 《얼굴에 다 써있네요》 등 싱글을 발표하다가
-                    2012년 6월, 12월에 치명적인 앨범 시리즈를 내고 활동을 계속 이어나가고 있다.
-                    음악 유통업체인 멜론과 인터뷰를 한 적이 있는데 본인은 SM의 프로듀서인 히치하이커를 보고 작곡가를 꿈꿔왔다고 한다.
-                    그래서 그런지 그가 영향을 받은 노래 다섯 곡 중 히치하이커가 프로듀싱 한 f(x)의 "빙그르"를 말하기도 하였다. 자세한 것은 링크 참조.
-                    이후 피키캐스트와의 인터뷰에서 엑소에게 곡을 주고 싶다고 하고 신화와 히치하이커에게 영향을 받은 것 등 여러 이야기를 한다.
-                    또한 SM의 여러 뮤지션들과 작업을 하고 싶다고 한다.</p>
+                <blockquote class="blockquote mb-0">
+                    <p>역시 기리보이!</p>
+                    <footer class="blockquote-footer">홍셩팬</footer>
+                </blockquote>
             </div>
         </div>
-        <div class="card">
-            <figure>
-                <img src="https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/6atO/image/Kzc1HpTSEPHC0zpOgvcwM19HmBc"
-                     class="img2" alt="음악스타일사진">
-            </figure>
-            <div class="card-body">
-                <h5 class="card-title">음악 스타일</h5>
-                <p class="card-text">초기에는 래퍼 이미지보다는 작곡이 가능한 플레이어 이미지로 음악 커리어를 시작했다.
-                    랩 실력이 썩 좋은 편은 아니었으나 싱어송라이터라는 점과 개성있는 작사 스타일과 랩 스타일로 마니아층을 형성했고,
-                    더콰이엇과 마찬가지로 랩이 부족한 프로듀서 포지션에서 탄탄한 실력을 갖춘 만능 플레이어로 성장하며 씬에서 확고한 위치를 다지고 있다.
-                    저스트뮤직 컴필 '파급효과'까지는 그 당시의 스윙스나 씨잼이 추구하던 저스트뮤직 특유의 '빡센 랩'을 밀었지만,
-                    그 이후로 사랑노래들의 비중이 높아지고 빡센 랩의 비중은 줄었다. 2017년부터는 또 '트렌디한 트랩' 음악을 밀기 시작했다.
-                    대표적으로는 'Acrnm'과 '옛날거'가 있다. 2019년 '치명적인 앨범3'을 계기로 주로 발라드 풍의 노래를 한다.
-                    대다수의 평들은 긍정적이다. 사랑노래 같은 경우에도 과거와 현재의 스타일이 꽤 다르다.
-                    과거에는 다양한 입장[21]을 다룬 가사를 통통 튀는 비트 위에 얹는 식의 곡이 많았다면 최근에 내는 곡은 애잔하고 부드러운
-                    분위기의 사랑노래가 많다. 굉장한 허슬러로 14년에 정규 1집을 내고 21년에 9집을 낼 정도로 작업물이 많다.
-                    스스로 작곡 작사을 해서 그런지 작업 속도가 굉장히 빠른 편.</p>
-            </div>
-        </div>
-        <div class="card">
-            <figure>
-                <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fer15yB%2FbtrhUY0id0F%2FMK89wLowhIR94KnkfPRKEK%2Fimg.jpg"
-                     class="img3" alt="배우활동사진">
-            </figure>
-            <div class="card-body">
-                <h5 class="card-title">배우 활동</h5>
-                <p class="card-text">MBC의 예능 프로그램 전지적 참견 시점에 출연하여 배우의 꿈을 가지고 있으며 2년째 연기 수업을 받고 있다고 밝혀 큰 화제가 되었다.
-                    서울체크인 숏필름 시사회 공지를 통해 본명인 홍시영으로 작품에 참여한 것이 알려져 배우 데뷔가 확실시 되었다.
-                    앞서 언급한 숏필름 [사람냄새 이효리]가 공개되며 2022년 7월 2일[22] 배우 홍시영으로 데뷔했다.
-                    삼남매 중 둘째 시영 역을 맡아 이효리, 구교환, 심달기와 호흡을 맞췄다. 2022년 하반기 방영 예정인 MBC 드라마 금혼령,
-                    조선 혼인 금지령에 정도석 역할로 캐스팅 되었다.
-                </p>
-            </div>
-        </div>
+        <!--댓글 끝-->
     </div>
 </div>
-<!--히스토리 끝-->
-
-<!--인스타그램 시작-->
-<div class="mypagebtn">
-    <nav aria-label="...">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#"><</a>
-            </li>
-
-            <div class="myinstagram">
-                <div class="instaimg1">
-                    <div class="card border-success mb-3" style="max-width: 20rem;">
-                        <div class="card-header bg-transparent border-success">giriboy91</div>
-                        <div class="card-body text-success">
-                            <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/32468073_1778916138842069_2754722642752700416_n.png?stp=dst-png_p480x480&_nc_cat=111&ccb=1-7&_nc_sid=8024bb&_nc_ohc=-WGIw9kqmSAAX_1190s&_nc_ht=scontent-gmp1-1.xx&oh=00_AT8-IZTSrwOAUZ9Fr05MHmdfXYNE2RJCaESK3_xeUQ6Npg&oe=630C8EBC"
-                                 class="card-img-top" alt="돌돌이랑">
-                            <p class="card-text">돌돌이랑</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-success">❤️giriboy91외 여러명 좋아합니다.</div>
-                        <p class="card-text"><small class="text-muted">7월 23일</small></p>
-                    </div>
-                </div>
-                <div class="instaimg2">
-                    <div class="card border-success mb-3" style="max-width: 20rem;">
-                        <div class="card-header bg-transparent border-success">giriboy91</div>
-                        <div class="card-body text-success">
-                            <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/32468073_1778916138842069_2754722642752700416_n.png?stp=dst-png_p480x480&_nc_cat=111&ccb=1-7&_nc_sid=8024bb&_nc_ohc=-WGIw9kqmSAAX_1190s&_nc_ht=scontent-gmp1-1.xx&oh=00_AT8-IZTSrwOAUZ9Fr05MHmdfXYNE2RJCaESK3_xeUQ6Npg&oe=630C8EBC"
-                                 class="card-img-top" alt="돌돌이랑">
-                            <p class="card-text">돌돌이랑</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-success">❤️giriboy91외 여러명 좋아합니다.</div>
-                        <p class="card-text"><small class="text-muted">7월 23일</small></p>
-                    </div>
-                </div>
-            </div>
-
-            <li class="page-item">
-                <a class="page-link" href="#">></a>
-            </li>
-        </ul>
-</div>
-</nav>
-<!--인스타그램 끝-->
-
-<!--전체 키워드 시작-->
-<div class="mykeyword">
-    <!--메인 키워드 시작-->
-    <div class="mainkeyword">
-        <p>아무튼,<br> 저는 제가 좋아요.</p>
-    </div>
-    <!--메인 키워드 끝-->
-
-    <!--키워드 내용 시작-->
-    <div class="keysection">
-        <!--키워드 링크 버튼 시작-->
-        <div class="btn1">
-            <a href="#pop_info_1" class="btn_open">네이트온</a>
-        </div>
-        <div class="btn2">
-            <a href="#pop_info_2" class="btn_open">0개국어</a>
-        </div>
-        <div class="btn3">
-            <a href="#pop_info_3" class="btn_open">mbti오류???</a>
-        </div>
-        <!--키워드 링크 버튼 끝-->
-        <!--키워드 팝업창 시작-->
-        <div id="pop_info_1" class="pop_wrap" style="display:none;">
-            <div class="pop_inner">
-                <p class="dsc">'기리보이'라는 이름은 아는 형이 기리보이와 네이트온을 하다가 지어줬다고.
-                    별다른 뜻은 없었지만 인터뷰를 할 때에 답변을 하기 위해서 나중에 길이 보이네, 즉 길이 보인다,
-                    어떤 일을 해도 앞길이 창창하다는 뜻을 붙였다고 한다.
-                    라디오 스타에서 밝힌 바로는 의미를 부여한 이후 정말 길이 보이기 시작했다고 한다.</p>
-                <button type="button" class="btn_close">닫기</button>
-            </div>
-        </div>
-
-        <div id="pop_info_2" class="pop_wrap" style="display:none;">
-            <div class="pop_inner">
-                <p class="dsc">별명이 "0개 국어"인데, 이는 여러 인터뷰 영상 등을 통해 말을 아주 답답하게 하는 모습을 보여주었기 때문.
-                    한 문장을 다 말하는 걸 들을 시간에 인터뷰 자막을 다섯 번 넘게 읽을 수 있다.
-                    평소 말투가 어눌하고 느릿느릿한 편이라 보는 이와 듣는 이로 하여금 고구마 100개 정도 먹은 답답함을 유발할 정도.
-                    그래서 콘서트나 라이브 영상에서 또렷한 발성과 박자 감각으로 쩌렁쩌렁 랩 하는 모습을
-                    보면 같은 사람이 맞나 싶을 정도로 이질감이 크다.</p>
-                <button type="button" class="btn_close">닫기</button>
-            </div>
-        </div>
-
-        <div id="pop_info_3" class="pop_wrap" style="display:none;">
-            <div class="pop_inner">
-                <p class="dsc">기리보이월드 에 올라온 MBTI 검사 영상에 의하면 INFP로 나왔지만 체크 실수로 인해 INFP가 나왔고,
-                    기존에 인스타그램 스토리에 올렸던 INTP의 성향이 기리보이와 더 잘 맞는 것 같다는 의견이 다분하다.</p>
-                <button type="button" class="btn_close">닫기</button>
-            </div>
-        </div>
-        <!--키워드 팝업창 끝-->
-    </div>
-</div>
-<!--키워드 내용 끝-->
-</div>
-<!--전체 키워드 끝-->
+<!--응원남기기 끝-->
 
 </body>
-<script src="homework_js.js"></script>
 </html>
