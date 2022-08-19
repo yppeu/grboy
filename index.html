@@ -15,6 +15,7 @@
     <!--Black+Han+Sans 폰트-->
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Batang&family=Hahmlet&display=swap"
           rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 
     <title>기리보이 팬명록</title>
     <style>
@@ -88,7 +89,6 @@
 
     <script>
 
-
         $.ajax({
             type: "GET",
             url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
@@ -100,7 +100,55 @@
                 $('#temp').append('현재 서울시 기온 : ' + temps + '˚' + `<br>` + '강수 확률 : ' + cloud);
                 $('#temp').addClass('text-center');
             }
-        })
+        });
+
+        $(document).ready(function () {
+            show_order();
+        });
+
+        function show_order() {
+            $.ajax({
+                type: 'GET',
+                url: '/grboy',
+                data: {},
+                success: function (response) {
+                    let rows = response['usercomment'];
+                    for (let i = 0; i < rows.length; i++) {
+                        let name = rows[i]['name_list']
+                        let comment = rows[i]['comment_list']
+                        console.log(name, comment);
+
+                        let temp_html = ` <div class="card-body">
+                                            <blockquote class="blockquote mb-0">
+                                                <p>${name}</p>
+                                                <footer class="blockquote-footer">${comment}</footer>
+                                            </blockquote>
+                                        </div>`
+
+                        $('#mycomment').append(temp_html);
+
+                    }
+                }
+            });
+        }
+
+        function save_msg() {
+
+            let name = $('#exampleFormControlInput1').val();
+            let comment = $('#exampleFormControlTextarea1').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/grboy',
+                data: {name_list: name, comment_list: comment},
+                success: function (response) {
+                    console.log(response['msg'])
+                    alert('응원 남기기 성공!')
+                    window.location.reload();
+                }
+            });
+        }
+
 
         function chrbtn() {
             $('#mycard').show();
@@ -141,16 +189,10 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="응원댓글" rows="3"></textarea>
         </div>
 
-        <button type="button" class="btn btn-danger">확인</button>
+        <button type="button" onclick="save_msg()" class="btn btn-danger">확인</button>
 
         <!--댓글 시작-->
-        <div class="myfooter">
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>역시 기리보이!</p>
-                    <footer class="blockquote-footer">홍셩팬</footer>
-                </blockquote>
-            </div>
+        <div id="mycomment">
         </div>
         <!--댓글 끝-->
     </div>
