@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'MonoplexKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    background-color: #FDF5E6;
+    width: 1024px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+body {
+    border: 1px solid #F0B469;
+    background-color: #FDF5E6;
+}
+
+
+/*팬명록 text*/
+@media screen and (min-width: 768px) and (max-width: 1600px) {
+    * {
+        font-family: 'MonoplexKR-Regular';
+        /* border: 1px solid lightgrey; */
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .page h1 {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px;
+        font-weight: 600;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header ul {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        height: auto;
+    }
+
+    header ul>li {
+        width: 33.3%;
+        float: left;
+        text-align: center;
+        border: 1px solid #F0B469;
+        cursor: pointer;
+    }
+
+    header li:hover {
+        background-color: #F0B469;
+        text-decoration: none;
+    }
+
+    header a {
+        text-decoration: none;
+        color: black;
+        font-size: 17px;
+    }
+
+    .mytitle {
+        width: 100%;
+        height: 1000px;
+        margin: 0 auto;
+        padding-top: 13px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
+    .mytitle div:nth-of-type(1) {
+        width: 50%;
+        height: 500px;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/6atO/image/Kzc1HpTSEPHC0zpOgvcwM19HmBc');
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+    .mytitle div:nth-of-type(2) {
+        width: 50%;
+        height: 500px;
+        background-color: #AE905E;
+        color: whitesmoke;
+        padding-top: 100px;
+        padding-right: 30px;
+        text-align: right;
+    }
+
+    .mytitle div:nth-of-type(2) p {
+        font-size: 13px;
+        margin: 0 auto;
+        padding: 2px;
+    }
+
+    .mytitle div:nth-of-type(3) {
+        width: 50%;
+        height: 500px;
+        background-color: #8B4513;
+        color: whitesmoke;
+        padding-top: 100px;
+        padding-left: 30px;
+        text-align: left;
+    }
+
+    .mytitle div:nth-of-type(3) p {
+        font-size: 13px;
+        margin: 0 auto;
+        padding: 2px;
+    }
+
+    .mytitle div:nth-of-type(4) {
+        flex-direction: row;
+        overflow: hidden;
+        width: 50%;
+        height: 500px;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://mblogthumb-phinf.pstatic.net/MjAxNzA1MjhfMTA2/MDAxNDk1OTA0MDkwNTU4.8dERbiftjp51nEPPj8RqncaTfPQxhd_M0XZex04Ib8Mg.ti_Jv_TMAmX88A4lb34Rryi9HtPxvwkSeFv-4PxA3lQg.JPEG.pushji/fceaba8b-33a7-4f4b-b60a-5d8ea246a275.jpg?type=w800 ');
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+    /*서울시 온도 API*/
+    #temp {
+        width: 100%;
+        font-size: 20px;
+        letter-spacing: -2px;
+        padding-bottom: 15px;
+    }
+
+    .section1 {
+        width: 100%;
+        height: 800px;
+        margin: 0 auto;
+        padding: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .section1 h1 {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 17px;
+        letter-spacing: -2px;
+        color: #8B4513;
+        margin-top: 33px;
+    }
+
+    .section1 h2 {
+        width: 100%;
+        font-size: 53px;
+        letter-spacing: -3px;
+        font-weight: 600;
+    }
+
+    .iframe-text {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .iframe-text p {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 17px;
+        letter-spacing: -1px;
+    }
+
+    .iframe-url {
+        width: 100%;
+        padding-top: 50px;
+        overflow: hidden;
+    }
+
+    .mycheer {
+        width: 100%;
+        height: 130px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .cheerBT {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cheerBT p {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 15px 15px 10px 15px;
+        font-size: 30px;
+        overflow: hidden;
+    }
+
+    .cheerBT p>a {
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        background-color: #AE905E;
+        border-radius: 30px;
+        margin: 0 auto;
+        padding: 15px;
+        letter-spacing: -2px;
+    }
+
+    .cheerBT p>a:hover {
+        background-color: #8B4513;
+        letter-spacing: -2px;
+    }
+
+    #top {
+        width: 0px;
+        height: 0px;
+        border-top: 15px solid transparent;
+        border-left: 15px solid transparent;
+        border-bottom: 15px solid #AE905E;
+        border-right: 15px solid transparent;
+        margin-left: 480px;
+    }
+}
