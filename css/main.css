@@ -191,3 +191,60 @@ section.approach .inner .fix .text.on{
     bottom: 50%;
     transform: translateY(50%);
 }
+
+
+/* section.sectors */
+section.sectors{
+  background: #f2f0eb;
+  padding: 100px 0 230px;
+  position: relative;
+  margin-bottom: 260px;
+}
+section.sectors .list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  width: 1400px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -160px;
+}
+section.sectors .list li{
+  width: 31%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+section.sectors .list li a{
+  position: relative;
+}
+section.sectors .list li a img{
+  width: 430px;
+  height: 300px;
+  filter: brightness(60%);
+  transition: all 0.4s;
+}
+section.sectors .list li a h3{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 1px;
+  transition: all 0.4s;
+  z-index: 100;
+  font-family: 'Montserrat', sans-serif;
+}
+section.sectors .list li a img:hover,
+section.sectors .list li a img:focus
+{
+  filter: brightness(70%);
+  transition: all 1s;
+  transform: scale(1.2);
+}
+section.sectors .list li a:hover h3,
+section.sectors .list li a:focus h3{
+  letter-spacing: 3px;
+  transition: all 0.6s;
+}
