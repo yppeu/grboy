@@ -138,7 +138,7 @@
     border-radius: 0;
     padding: 5px 18px;
     transition: all 0.2s;
-    background: #f2f0eb;
+    /* background: #f2f0eb; */
 }
 
 section.about{
@@ -247,4 +247,26 @@ section.sectors .list li a:hover h3,
 section.sectors .list li a:focus h3{
   letter-spacing: 3px;
   transition: all 0.6s;
+}
+
+
+/* section.service */
+section.service{
+  padding: 100px 0;
+}
+section.service .inner{
+  overflow: hidden;
+}
+section.service .img{
+  width: 48%;
+  float: left;
+  border-radius: 10px;
+  overflow: hidden;
+}
+section.service .img img{
+  width: 100%;
+}
+section.service .text{
+  width: 45%;
+  float: right;
 }
