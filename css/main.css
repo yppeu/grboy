@@ -189,6 +189,10 @@ section.approach .inner .list li a{
     display: block;
     width: 100%;
     height: 100%;
+    position: relative;
+}
+section.approach .inner .list li a span{
+  display: none;
 }
 section.approach .inner .list li a img{
     width: 100%;
@@ -201,6 +205,7 @@ section.approach .inner .fix{
     top: 0;
     right: 0;
 }
+/* section.approach 모션 */
 section.approach .inner .fix .text{
     position: absolute;
     bottom: 10%;
@@ -210,7 +215,38 @@ section.approach .inner .fix .text.on{
     bottom: 50%;
     transform: translateY(50%);
 }
-
+section.approach .inner .list li a.on::after,
+section.approach .inner .list li a:hover::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(41, 41, 41, 0.6);
+  transition: all 0.3s;
+}
+section.approach .inner .list li a.on span,
+section.approach .inner .list li a:hover span{
+  position: absolute;
+  display: block;
+  z-index: 1;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+  font-size: 35px;
+  font-style: italic;
+}
+section.approach .inner .list li a.on b,
+section.approach .inner .list li a:hover b{
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-size: 30px;
+  letter-spacing: -0.6px;
+}
 
 /* section.sectors */
 section.sectors{
@@ -255,9 +291,9 @@ section.sectors .list li a h3{
   z-index: 100;
   font-family: 'Montserrat', sans-serif;
 }
+/* section.sectors 모션 */
 section.sectors .list li a img:hover,
-section.sectors .list li a img:focus
-{
+section.sectors .list li a img:focus{
   filter: brightness(70%);
   transition: all 1s;
   transform: scale(1.2);
@@ -266,6 +302,20 @@ section.sectors .list li a:hover h3,
 section.sectors .list li a:focus h3{
   letter-spacing: 3px;
   transition: all 0.6s;
+}
+section.sectors .list.motion li{
+  animation-name: sectors;
+  animation-duration: 1s;
+}
+@keyframes sectors{
+  0% {
+    opacity: 0;
+    transform: translateX(1000px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateX(1000px);
+  }
 }
 
 
