@@ -6,7 +6,6 @@ $(document).on('click', 'a[href="#"]', function(e){
 
 // 1. approach 영역
 $(window).on('scroll resize', function(){
-    console.log(1);
     var scrollPos = 0;
     scrollPos = $(document).scrollTop();
     fix();
@@ -61,9 +60,13 @@ $(function(){
     console.log('스크롤 작동 시작');
     $('.animate').scrolla({
         mobile: true, // disable animation on mobiles
-        once: false, // only once animation play on scroll
+        once: false // only once animation play on scroll
     });
     console.log('스크롤 작동 끝');
 });
 
 
+// 3. 텍스트 애니메이션
+$(function(){
+    Splitting();
+});

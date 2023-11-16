@@ -28,7 +28,7 @@
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-        transition: all 0.4s;
+    transition: all 0.4s;
   }
   /* z-index는 0에서 십만까지 가능한데 클수록 우선순위가 높아짐 */
   header .inner{
@@ -96,6 +96,10 @@
     height: 100vh;
     position: relative;
 }
+.contents .visual iframe{
+  /* background: rgba(0, 0, 0, 0.6); */
+  filter: brightness(0.6);
+}
 .contents .visual .waves{
     width: 100vw;
     height: 100vh;
@@ -117,7 +121,7 @@
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    font-size: 70px;
+    font-size: 90px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 /* inner > 전체 레이아웃 넓이 공통부분 */
@@ -307,6 +311,12 @@ section.sectors .list.motion li{
   animation-name: sectors;
   animation-duration: 1s;
 }
+section.sectors .list.motion li:nth-child(2){
+  animation-duration: 1.15s;
+}
+section.sectors .list.motion li:nth-child(3){
+  animation-duration: 1.3s;
+}
 @keyframes sectors{
   0% {
     opacity: 0;
@@ -316,6 +326,10 @@ section.sectors .list.motion li{
     opacity: 0;
     transform: translateX(1000px);
   }
+  /* 100%{
+    opacity: 1;
+    transform: translateX(0);
+  } */
 }
 
 
@@ -339,6 +353,26 @@ section.service .text{
   width: 45%;
   float: right;
 }
+/* section.service 모션 */
+section.service .img.motion{
+  animation-name: service;
+  animation-duration: 1s;
+}
+@keyframes service{
+  0% {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 
 /* section.journal */
@@ -392,6 +426,32 @@ section.journal .list li a p{
   text-align: justify;
   letter-spacing: -0.6px;
 }
+/* section.journal 모션 */
+section.journal .list.motion li{
+  animation-name: journal;
+  animation-duration: 0.5s;
+}
+section.journal .list.motion li:nth-child(2){
+  animation-duration: 0.6s;
+}
+section.journal .list.motion li:nth-child(3){
+  animation-duration: 0.7s;
+}
+section.journal .list.motion li:nth-child(4){
+  animation-duration: 0.8s;
+}
+@keyframes journal{
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+
+
 
 
 /* footer */
@@ -432,4 +492,27 @@ footer .inner .sns li{
   margin: 0 40px;
   font-size: 17px;
   font-weight: bold;
+}
+
+
+/* 텍스트 애니메이션 */
+@keyframes textAni{
+  0%{
+    opacity: 0;
+  }
+  30%{
+    opacity: 0;
+  }
+}
+
+/* 비쥬얼 텍스트 애니메이션 */
+.visual .title.motion .char{
+  animation: textAni 2s both;
+  animation-delay: calc(0.08s * var(--char-index));
+}
+
+/* text 공통 텍스트 애니메이션 */
+.text.motion .word{
+  animation: textAni 0.8s both;
+  animation-delay: calc(0.02s * var(--word-index));
 }

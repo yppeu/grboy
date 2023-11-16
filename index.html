@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/reset.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
-    <script src="/dist/js/jquery-scrolla.min.js"></script>
+    <script src="./js/jquery.scrolla.min.js"></script>
+    <script src="/js/splitting.min.js"></script>
     <script src="/js/script.js"></script>
-
 </head>
 <body>
     <div class="wrap">
@@ -38,7 +38,7 @@
                 title="[220512 성균관대학교축제] [4K] 기리보이 - 호구" 
                 frameborder="0"  autoplay muted loop playsinline>  
                 </iframe>
-                 <h2 class="title">Girboy fan page</h2>
+                 <h2 class="title animate" data-animate="motion" data-splitting>Girboy fan page</h2>
             </section>
             <section class="about">
                 <div class="inner">
@@ -92,8 +92,8 @@
             </section>
             <section class="sectors">
                 <div class="inner">
-                    <div class="text">
-                        <h2 class="title animate" data-animate="motion" >sectors</h2>
+                    <div class="text animate" data-animate="motion" data-splitting>
+                        <h2 class="title">sectors</h2>
                         <p>Luxury crew apparel curated across oceans,<br>
                             in private residences and at altitude.
                         </p>
@@ -123,9 +123,11 @@
             </section>
             <section class="service">
                 <div class="inner">
-                    <div class="img animate" data-animate="motion"><img src="./img/service.jpg" alt=""></div>
+                    <div class="img animate" data-animate="motion" data-splitting>
+                        <img src="./img/service.jpg" alt="">
+                    </div>
                     <div class="text">
-                        <h2 class="title animate" data-animate="motion">service</h2>
+                        <h2 class="title animate" data-animate="motion" data-splitting>service</h2>
                         <p>Crew a la Mode specialise in all<br>
                             your needs, from to storage<br>
                             solutions to graphic design,<br>
@@ -138,8 +140,8 @@
             </section>
             <section class="journal">
                 <div class="inner">
-                    <h2>grboy's single</h2>
-                    <ul class="list animate" data-animate="motion">
+                    <h2 class="animate" data-animate="motion" data-splitting>grboy's single</h2>
+                    <ul class="list animate" data-animate="motion" data-splitting>
                         <li>
                             <a href="#">
                                 <p class="img"><img src="./img/jou01.jpg" alt=""></p>
