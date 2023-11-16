@@ -70,3 +70,14 @@ $(function(){
 $(function(){
     Splitting();
 });
+
+
+// gnb
+$(function(){
+    $('header .gnbBtn').on('click',function(){
+        $('header nav.gnb').toggleClass('on');
+    });
+    $('.contents').on('click',function(){
+        $('header nav.gnb').removeClass('on');
+    });
+});

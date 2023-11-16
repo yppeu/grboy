@@ -83,6 +83,58 @@
     transition: all 0.4s;
   }
 
+  /* gnb */
+  nav.gnb{
+    position: absolute;
+    left: -1000px;
+    top: 0;
+    background: #000;
+    color: #fff;
+    width: 0;
+    height: 100vh;
+    padding: 95px 50px;
+    box-sizing: border-box;
+    text-align: left;
+    transition: all 0.7s;
+    overflow: hidden;
+  }
+  nav.gnb ul{
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+    padding: 20px 0;
+  }
+  nav.gnb ul li a{
+    text-align: left;
+    line-height: 50px;
+    font-size: 22px;
+    letter-spacing: -0.6px;
+  }
+  nav.gnb ul li a span{
+    text-transform: none;
+    font-family: 'Nanum Myeongjo', serif;
+    font-style: italic;
+    font-size: 20px;
+  }
+/* header.on 붙을 때 gnb 디자인 */
+header.on nav.gnb{
+  width: 300px;
+  transition: all 0.4s;
+}
+header.on nav.gnb ul{
+  width: 50%;
+}
+/* header.on */
+nav.gnb.on{
+  width: 400px;
+  left: 0;
+}
+
+
 
 /* contents */
 .contents{
@@ -515,4 +567,16 @@ footer .inner .sns li{
 .text.motion .word{
   animation: textAni 0.8s both;
   animation-delay: calc(0.02s * var(--word-index));
+}
+
+.text.motion a{
+  animation: border 1s both;
+}
+@keyframes border{
+  0%{
+    border-color: transparent;
+  }
+  60%{
+    border-color: transparent;
+  }
 }
