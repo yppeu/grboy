@@ -175,6 +175,7 @@ nav.gnb.on{
     color: #fff;
     font-size: 90px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
 }
 /* inner > 전체 레이아웃 넓이 공통부분 */
 .inner{
@@ -213,7 +214,7 @@ nav.gnb.on{
     border-radius: 0;
     padding: 5px 18px;
     transition: all 0.2s;
-    background: #f2f0eb;
+    /* background: #f2f0eb; */
 }
 
 section.about{
@@ -579,4 +580,125 @@ footer .inner .sns li{
   60%{
     border-color: transparent;
   }
+}
+
+
+
+
+
+
+
+
+
+/* 반응형 웹*/
+/* 1004 */
+@media screen and (max-width:1400px){
+  .inner,
+  section.sectors .list{
+    width: 90%;
+  }
+  section.journal .list li,
+  section.journal .list li a .img img{
+    width: 220px;
+  }
+}
+/* 1024 */
+@media screen and (max-width:1024px){
+  .contents .visual .title{
+    font-size: 66px;
+  }
+  section.about .inner .text p,
+  .text p{
+    font-size: 28px;
+  }
+  section.approach .inner .list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  section.approach .inner .list li{
+    width: 48.5%;
+    margin-bottom: 20px;
+  }
+  section.approach .inner .list li:last-child{
+    margin-bottom: 20px;
+  }
+  section.approach .inner .fix{
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  section.approach .inner .fix,
+  section.approach .inner .fix .text,
+  section.approach .inner .fix .text.on{
+    /* 기본값 */
+    position: static;
+    transform: none;
+  }
+  section.approach .inner{
+    display: flex;
+    flex-wrap: wrap;
+    /* 컬럼이 역으로 바뀜 */
+    flex-direction: column-reverse;
+  }
+  section.approach .inner .list li a.on::after, 
+  section.approach .inner .list li a:hover::after{
+    display: none;
+  }
+  section.approach .inner .list li a.on span,
+  section.approach .inner .list li a:hover span,
+  section.approach .inner .list li a span{
+    display: none;
+  }
+  section.approach .inner .list li a.on b,
+  section.approach .inner .list li a:hover b,
+  section.approach .inner .list li a span b{
+    display: none;
+  }
+  section.sectors{
+    padding: 100px 0 20%;
+    margin-bottom: 15%;
+  }
+  section.sectors .list{
+    bottom: -23%;
+  }
+  section.sectors .list li a img{
+    width: 100%;
+    height: auto;
+  }
+  section.journal{
+    padding: 25% 0 100px;
+  }
+  .contents{
+    margin-bottom: 330px;
+  }
+  footer{
+    height: 330px;
+    padding-top: 75px;
+    padding-bottom: 0;
+  }
+  footer .inner{
+    flex-wrap: wrap;
+  }
+  footer .inner .footerLogo{
+    width: 100%;
+    font-size: 60px;
+  }
+  footer .inner .contact{
+    width: 100%;
+    margin: 20px 0;
+  }
+  footer .inner .sns{
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 35px;
+  }
+  footer .inner .sns li{
+    margin-right: 0;
+  }
+}
+/* 768 */
+@media screen and (max-width:768px){
+  
 }
