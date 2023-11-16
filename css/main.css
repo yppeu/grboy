@@ -727,3 +727,81 @@ footer .inner .sns li{
     height: auto;
   }
 }
+/* 500 */
+@media screen and (max-width:500px){
+  header{
+    padding: 20px 0 18px;
+  }
+  header .inner .gnbBtn, 
+  header.on .inner .gnbBtn{
+    width: 22px;
+    margin-top: 5px;
+  }
+  header .inner .logo,
+  header.on .inner .logo{
+    font-size: 18px;
+  }
+  header .inner .contact{
+    display: none;
+  }
+  nav.gnb.on,
+  header.on nav.gnb{
+    width: 100%;
+    padding: 0;
+  }
+  nav.gnb ul,
+  header.on nav.gnb ul{
+    width: 50%;
+  }
+  header .inner .gnbBtn{
+    z-index: 200;
+  }
+  .contents .visual .title{
+    font-size: 40px;
+  }
+  section.about .inner .text p, 
+  .text p{
+    font-size: 23px;
+  }
+  section.about,
+  section.approach{
+    padding: 80px 0;
+  }
+  section.approach .inner .list li{
+    width: 100%;
+  }
+  section.sectors{
+    padding: 80px 0 85px;
+  }
+  section.sectors .list li a h3{
+    font-size: 16px;
+    text-align: center;
+  }
+  section.journal{
+    padding: 60% 0 80px;
+  }
+  section.journal .list li{
+    width: 100%;
+  }
+  section.journal .list li:nth-child(2){
+    display: none;
+  }
+  /* 2번째 자식까지만 해당하고 그 이상은 안보이게 처리. */
+  /* section.journal .list li:nth-child(2)~ * {display: none;} */
+  footer{
+    height: 280px;
+    padding: 50px 0;
+  }
+  footer .inner .footerLogo{
+    font-size: 43px;
+  }
+  footer .inner .sns{
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  footer .inner .sns li{
+    margin-left: 0;
+    margin-right: 60px;
+    font-size: 14px;
+  }
+}
